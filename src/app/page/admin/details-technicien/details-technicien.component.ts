@@ -15,6 +15,7 @@ export class DetailsTechnicienComponent {
   data:any
   ticket?:Array<Ticket>=[];
   label:string="";
+  role:string=""
   constructor(public service:AdminService,public activated:ActivatedRoute,public location:Location){}
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class DetailsTechnicienComponent {
     console.log(url)
 
     if(url=='detail-technicien'){
+      this.role="t"
       this.service.getDetailsClient(id,"TECHNICIEN").subscribe((value)=>{
         this.data=value;
 
@@ -34,6 +36,7 @@ export class DetailsTechnicienComponent {
       this.label="Les tickets prises en charge par:"
     }
     else{
+      this.role="u"
       this.service.getDetailsClient(id,"USER").subscribe((value)=>{
         this.data=value;
 

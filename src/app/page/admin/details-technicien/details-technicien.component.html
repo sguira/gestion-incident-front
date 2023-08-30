@@ -31,11 +31,26 @@
       Statistique {{data['name']}}
     </h2>
     <div class="stat">
+      <div class="item-custom" >
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+
+        <div class="text" >
+          <p>Nouveau ticket</p>
+          <u>
+            {{
+              data['nouveau']
+            }}
+          </u>
+        </div>
+      </div>
 
       <div class="item-custom">
         <div class="icon">
           <i class="ri-shield-user-fill"></i>
         </div>
+
         <div class="text">
           <p>Ticket en cours</p>
           <u>
@@ -45,6 +60,7 @@
           </u>
         </div>
       </div>
+
       <div class="item-custom">
         <div class="icon">
           <i class="ri-shield-user-fill"></i>
@@ -67,6 +83,20 @@
           <u>
             {{
               data['cloturer']
+            }}
+          </u>
+        </div>
+      </div>
+      <div class="item-custom" >
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+
+        <div class="text" >
+          <p>Total tickets</p>
+          <u>
+            {{
+              data['cree']
             }}
           </u>
         </div>
