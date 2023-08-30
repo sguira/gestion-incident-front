@@ -105,6 +105,41 @@ i{
   }
 }
 
+.item-custom{
+  margin: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // border: 1px solid rgba(190, 184, 184, 0.426);
+  padding: 12px;
+  border-radius: 16px;
+  max-width: 260px;
+  min-width: 260px;
+  .icon{
+    margin: auto 2px;
+    display: flex;
+    i{
+      font-size: 36px;
+      color: blue;
+    }
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    u{
+        text-decoration: none;
+        font-size: 36px;
+        font-weight: bolder;
+        text-align: center;
+    }
+  }
+
+  box-shadow:  0 0 10px silver;
+
+}
+
 @media only screen and (max-width:400px) {
   .alerte-succes{
     display: inline-block;

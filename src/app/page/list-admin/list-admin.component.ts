@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Ticket } from 'src/app/model/Ticket';
-import { AdminService } from 'src/app/service/admin/admin.service';
+import {  TechnicienService } from 'src/app/service/admin/admin.service';
 
 @Component({
   selector: 'app-list-admin',
@@ -10,10 +11,15 @@ import { AdminService } from 'src/app/service/admin/admin.service';
 })
 export class ListAdminComponent {
 
-  tickets:Array<Ticket>=this.service.getAllTicket();
+  tickets:Array<Ticket>=[];
 
 
-  constructor(private service:AdminService){}
+  @Input()
+  type:string="TECHNICIEN";
+
+  constructor(private service:TechnicienService,public router:ActivatedRoute){
+    console.log("param:"+this.router.snapshot.params['admin'])
+  }
 
 
   currentState:String="Tous";
@@ -21,6 +27,12 @@ export class ListAdminComponent {
 
   ngOnInit(): void {
 
+    if(this.router.snapshot.params['admin']=="admin"){
+      this.tickets=this.service.getAllTicket()
+    }
+    else{
+      this.tickets=this.service.getAllTicket()
+    }
   }
 
   onSearch(name:String){

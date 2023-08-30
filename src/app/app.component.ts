@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
+import { AdminService } from './service/admin/service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,18 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
   title = 'app-gestion-incident2';
-
+  adminAuth?:boolean=false;
   isAuth:boolean=false;
-  constructor(public authService:AuthService){
+  constructor(public authService:AuthService,public serviceAdmin:AdminService){
     if(this.authService.getId()){
 
     }
     else{
       this.isAuth=false;
+    }
+
+    if(serviceAdmin.getAuth()){
+      this.adminAuth=true;
     }
   }
 

@@ -35,7 +35,7 @@
           <input type="password" formControlName="confirm" #confirm_ (focus)="validConfirm()" [ngStyle]="{'border-color':(password_.value!=confirm_.value && password_.value.length>0 )?'red':''}">
         </div>
       </div>
-      <div class="group">
+      <!-- <div class="group">
         <div class="input-group">
           <label for="">Nom utilisateur admin</label>
           <input type="text" formControlName="userName" minlength="5">
@@ -44,7 +44,7 @@
           <label for="">Mot de passe admin</label>
           <input type="text" formControlName="userPwd">
         </div>
-      </div>
+      </div> -->
       <div *ngIf="responseType!=-1" class="response" [ngClass]="responseType==0?'error': responseType==1?'sucess':''">
         <span><i class="ri-check-line"></i></span>
         <span>{{message}}</span>

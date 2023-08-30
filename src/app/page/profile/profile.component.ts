@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from 'src/app/dialog/confirm/confirm.component';
 import { UserModel } from 'src/app/model/user';
-import { AdminService } from 'src/app/service/admin/admin.service';
+import { TechnicienService } from 'src/app/service/admin/admin.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { ServiceService } from 'src/app/service/service.service';
 import { EditUserComponent } from '../edit-user/edit-user.component';
@@ -16,7 +16,7 @@ export class ProfileComponent {
 
   user?:UserModel
 
-  constructor(public service:AdminService,public auth:AuthService,public dialog:MatDialog){
+  constructor(public service:TechnicienService,public auth:AuthService,public dialog:MatDialog){
     this.service.getUserInfo(this.auth.getId()).subscribe((value)=>{
       this.user=UserModel.fromJson(value)
     })

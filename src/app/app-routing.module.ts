@@ -14,6 +14,12 @@ import { ReparationComponent } from './page/reparation/reparation.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AddTechnicienComponent } from './page/admin/add-technicien/add-technicien.component';
 import { ConfirmComponent } from './page/confirm/confirm.component';
+import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
+import { GardGuard } from './page/admin/gard.guard';
+import { AdminLoginComponent } from './page/admin/admin-login/admin-login.component';
+import { DetailsTechnicienComponent } from './page/admin/details-technicien/details-technicien.component';
+import { StatComponent } from './page/admin/stat/stat.component';
+
 
 
 
@@ -60,7 +66,7 @@ const routes: Routes = [
   {
     path:'details-tickets/:id',
     component:DetailsTicketComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   }
   ,
   {
@@ -72,7 +78,7 @@ const routes: Routes = [
   {
     path:'details/:id',
     component:DetailsComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path:'attribution/:id/:type',
@@ -81,11 +87,46 @@ const routes: Routes = [
   },
   {
     path:'add-technicien',
+    canActivate:[GardGuard],
     component:AddTechnicienComponent
   },
   {
     path:'confirm-compte',
     component:ConfirmComponent
+  },
+  {
+    canActivate:[GardGuard],
+    path:'admin',
+    component:DashboardComponent
+  },
+  {
+    path:'admin-login',
+    component:AdminLoginComponent
+  },
+  {
+    canActivate:[GardGuard],
+    path:'detail-technicien/:id',
+    component:DetailsTechnicienComponent
+  },
+  {
+    canActivate:[GardGuard],
+    path:'detail-user/:id',
+    component:DetailsTechnicienComponent
+  },
+  {
+    canActivate:[GardGuard],
+    path:'admin-ticket/:type',
+    component:TicketComponent
+  },
+  {
+    canActivate:[GardGuard],
+    path:'stat',
+    component:StatComponent
+  },
+  {
+    path:'utilisateur',
+    canActivate:[GardGuard],
+    component:DashboardComponent
   }
 
 ];

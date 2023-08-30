@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RejectSolutionComponent } from 'src/app/dialog/reject-solution/reject-solution.component';
 import { Ticket } from 'src/app/model/Ticket';
 import { UserModel } from 'src/app/model/user';
-import { AdminService } from 'src/app/service/admin/admin.service';
+import { TechnicienService } from 'src/app/service/admin/admin.service';
 
 import { ServiceService } from 'src/app/service/service.service';
 
@@ -18,7 +18,7 @@ export class DetailsComponent {
     id?:String;
     ticket?:Ticket;
   technicien?:UserModel
-    constructor(private activated:ActivatedRoute,public service:ServiceService,public adminService:AdminService,private modal:MatDialog){
+    constructor(private activated:ActivatedRoute,public service:ServiceService,public adminService:TechnicienService,private modal:MatDialog){
       this.id=this.activated.snapshot.params['id'];
 
       this.service.getSingleTicket(this.id!).subscribe((value)=>{

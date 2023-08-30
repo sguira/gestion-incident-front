@@ -37,6 +37,13 @@ import { ListenerComponent } from './spinner/listener/listener.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ListenerCircularComponent } from './spinner/listener-circular/listener-circular.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
+import { ListTechnicienComponent } from './page/admin/list-technicien/list-technicien.component';
+import { AdminLoginComponent } from './page/admin/admin-login/admin-login.component';
+import { ModalDeleteComponent } from './page/admin/modal-delete/modal-delete.component';
+import { DetailsTechnicienComponent } from './page/admin/details-technicien/details-technicien.component';
+import { NavbarAdminComponent } from './page/admin/navbar-admin/navbar-admin.component';
+import { StatComponent } from './page/admin/stat/stat.component';
 
 
 @NgModule({
@@ -61,7 +68,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MessageComponent,
     RejectSolutionComponent,
     ListenerComponent,
-    ListenerCircularComponent
+    ListenerCircularComponent,
+    DashboardComponent,
+    ListTechnicienComponent,
+    AdminLoginComponent,
+    ModalDeleteComponent,
+    DetailsTechnicienComponent,
+    NavbarAdminComponent,
+    StatComponent
   ],
   imports: [
     BrowserModule,

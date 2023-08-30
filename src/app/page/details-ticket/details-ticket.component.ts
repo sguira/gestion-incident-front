@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ticket } from 'src/app/model/Ticket';
 import { UserModel } from 'src/app/model/user';
-import { AdminService } from 'src/app/service/admin/admin.service';
+import { TechnicienService } from 'src/app/service/admin/admin.service';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class DetailsTicketComponent {
   btn2Text:String=""
   id:any;
   client?:UserModel;
-  constructor(private route:ActivatedRoute,private service:AdminService,private router:Router){}
+  constructor(private route:ActivatedRoute,private service:TechnicienService,private router:Router){}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

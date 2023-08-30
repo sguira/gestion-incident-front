@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class TechnicienService {
 
   // allTicketSubject?:Subject<any>=new Subject<any>();
   allTicket:Array<Ticket>=[];

@@ -42,7 +42,7 @@
 
 
 <div class="content-container" >
-  <app-listener-circular *ngIf="!tickets"></app-listener-circular>
+  <app-listener-circular *ngIf="listener"></app-listener-circular>
   <div class="" *ngFor="let item of tickets">
     <div class="test item" *ngIf="currentType=='Tous'|| (currentType==item.status) ">
       <img src="../../../assets/image/ticket.png" alt="">
@@ -66,7 +66,8 @@
     </p>
 
     <div class="action">
-      <span routerLink="/update-ticket/{{item.id}}"><i class="ri-edit-box-line"></i>Modifier</span>
+      <span routerLink="/update-ticket/{{item.id}}" *ngIf="role=='TECH'"><i class="ri-edit-box-line"></i>Modifier</span>
+      <span (click)="deleteTicket(item.id!)" *ngIf="role=='ADMIN'"><i class="ri-close-line"></i>Supprimer</span>
       <span routerLink="/details/{{item.id}}"><i class="ri-eye-line"></i>Consulter</span>
     </div>
   </div>

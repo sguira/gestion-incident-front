@@ -3,7 +3,7 @@ import {ServiceService} from '../../service/service.service'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ticket } from 'src/app/model/Ticket';
-import { AdminService } from 'src/app/service/admin/admin.service';
+import { TechnicienService } from 'src/app/service/admin/admin.service';
 import { Reparation } from 'src/app/model/Reparation';
 import { Tache } from 'src/app/model/Tache';
 import { AuthService } from 'src/app/service/auth.service';
@@ -21,7 +21,7 @@ export class ReparationComponent {
   type?:Number
   showAlerte:boolean=false;
   solution_=""
-  constructor(public auth: AuthService, public service:ServiceService,public fb:FormBuilder,public snapshot:ActivatedRoute,public adminService:AdminService,private route:Router){
+  constructor(public auth: AuthService, public service:ServiceService,public fb:FormBuilder,public snapshot:ActivatedRoute,public adminService:TechnicienService,private route:Router){
 
   }
 

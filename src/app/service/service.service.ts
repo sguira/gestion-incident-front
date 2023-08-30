@@ -17,6 +17,8 @@ export class ServiceService {
   idUser?:String=this.auth.getId()?.replaceAll("\"","");
   userRole?:string;
 
+
+
   ticket:Array<Ticket>=[]
 
   categorie:Array<any>=[
@@ -82,7 +84,7 @@ export class ServiceService {
 
   updateTicket(ticket:Ticket):Observable<any>{
     console.log("appel"+ticket.toJson2())
-    return this.http.put(this.url+'update-ticket/'+'64a834b8fb89682061ff6915',ticket.toJson2());
+    return this.http.put(this.url+'update-ticket/'+this.idUser,ticket.toJson2());
   }
 
   searchService(text:String):Array<Ticket>{
